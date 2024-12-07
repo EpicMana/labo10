@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+}
+ 
+.entete,
+.pied{
+    background-color: rgb(4, 61, 114);
+}
+ 
+body > section:nth-of-type(1) {
+    background-color: hsl(184, 84%, 52%);
+}
+body > section:nth-of-type(2) {
+    background-color: hsl(184, 77%, 49%);
+}
+body > section:nth-of-type(3) {
+    background-color: hsl(184, 75%, 44%);
+}
+body > section:nth-of-type(4) {
+    background-color: hsl(184, 78%, 42%);
+}
+ 
+.global{
+    min-height: 100vh;
+    max-width: 1200px;
+    background-color: rgba(0, 0, 0, .5);
+    margin: 0 auto;
+}
+
+/* //////////////////////////////////////////// formulaire  */
+#burger {
+    position : fixed;
+    top: 20px;
+    right: 20px;
+    border : 1px solid #aaa;
+    border-radius: 5px;
+}
+/* définition du format du menu. Par défaut le menu est invisible */
+#menu{
+    /*display : none;  le menu est invisible */
+    position : fixed; /* À un positionnement fixe par rapport à la fenêtre */
+    top: 100px;
+    right: 20px;
+    border : 1px solid #00f;
+    background-color: #07235f;
+    color: #fff;
+    transition: transform .25s;
+    transform : translateX(225px);/* le menu est sorti de la fenetre donc il est invisible */
+    width : 200px;
+    height: 500px;
+    padding : 10px;
+}  
+/* Sélectionne l'élément #burger qui est précédé par la case à côcher (#chk-burger côcher) checked */
+/* opérateur + un des suivant
+   opérateur ~ le suivant
+*/
+#chk-burger:checked + #menu {
+    /*display:block;  menu devient visible */
+    transform : translateX(0);/* le menu reprend sa position naturel donc devient visible */
+} 
+
+#menu a {
+    color : #fff;
+    display : block;
+}
+
+
+#chk-burger{
+    display : none;
+    width : 200px;
+    border : 2px solid #f00;
+    padding: 10px;
+}
+
+/* ///////////////////////////////////////// fin formulaire */
+
+h1{
+margin: 0;
+color: aqua;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+font-style: italic;
+font-size: 3.5rem;
+}
+ 
+p{
+ margin-top: 20px;
+ font-size: 17px;
+ line-height: 2rem;
+ color: rgb(89, 213, 213);
+}
+nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+ 
+nav a{
+    margin: 20px;
+    margin-top: 40px;
+    text-decoration: none;
+    color: aqua;
+}
+ 
+#grosdiv{
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-wrap: wrap;
+}
+
+#img{
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+#img img{
+    width: 500px;
+}
+ 
+#contexte{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 90px;
+    flex-grow: 2;
+    flex-basis: 300px;
+}
+#infos{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 850px;
+    left: 490px;
+}
+
+
+.article__figure {
+    /* position: absolute;
+    top:50%;
+    height:50%;
+    */
+    transform : scale(.95) translateX(-2%);
+    transition : transform .25s, filter .25s;
+    filter:grayscale(1) blur(1px);
+  
+  
+  }
+  .article__figure:hover {
+    transform : scale(1) translateX(0);
+    filter:grayscale(0) blur(0);
+  
+  }
+  
+  .article {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .article:nth-of-type(even)  .article__figure{
+    order: 3;
+  }
+  
